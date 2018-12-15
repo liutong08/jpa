@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jpa-5" transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- <class>cn.com.taiji.Authority</class>
+		<class>cn.com.taiji.User</class>
+ -->
+		<class>cn.com.taiji.entity.Address</class>
+		<class>cn.com.taiji.entity.People</class>
+
+		<!-- <class>cn.com.taiji.Article</class>
+		<class>cn.com.taiji.Author</class> -->
+
+
+
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/taiji" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="root" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="eclipselink.ddl-generation"
+				value="create-tables" />
+
+			<!-- 配置JPA实现产品的属性，即hibernate的属性 -->
+			<property name="hibernate.format_sql" value="true" /><!-- 是否格式化sql语句 -->
+			<property name="hibernate.show_sql" value="true" /> <!-- 是否在控制台打印sql语句 -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>
